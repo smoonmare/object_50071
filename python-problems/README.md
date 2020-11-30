@@ -1,6 +1,6 @@
 ### Random Python problems for worming up
 
-Source: [!edabid](https://edabid.com)
+Source: [edabid](https://edabid.com)
 
 
 https://edabit.com/challenge/2zKetgAJp4WRFXiDT - length_of_number.py
