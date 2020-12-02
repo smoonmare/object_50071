@@ -18,5 +18,7 @@ Joining images
 Color detection
 ##### Chapter 8
 Contours and shape detection
+##### Chapter 9
+Face detection. You can get *Haar Cascades* for **OpenCV** [here](https://github.com/opencv/opencv/tree/master/data/haarcascades)
 #
 You may can grab some [Free Stock Videos](https://www.pexels.com/videos/) for your projects. 
