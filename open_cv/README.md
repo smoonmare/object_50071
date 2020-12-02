@@ -12,6 +12,9 @@ Resizing and Cropping
 Shapes and text
 ##### Chapter 5
 Warp Perspective
-##### Joining images
+##### Chapter 6
+Joining images
+##### Chapter 7
+Color detection
 #
 You may can grab some [Free Stock Videos](https://www.pexels.com/videos/) for your projects. 
