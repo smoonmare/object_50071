@@ -1,5 +1,4 @@
 import cv2
-import numpy as np
 
 img = cv2.imread("test_pic.jpg")
 print(img.shape)
