@@ -8,5 +8,7 @@ Read images, video and webcam feed.
 Basic Functions
 ##### Chapter 3
 Resizing and Cropping
+##### Chapter 4
+Shapes and text
 #
 You may can grab some [Free Stock Videos](https://www.pexels.com/videos/) for your projects. 
