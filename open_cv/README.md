@@ -6,6 +6,7 @@ All credit goes to an amazing [Murtaza's Worshop](https://www.instagram.com/murt
 Read images, video and webcam feed.
 ##### Chapter 2
 Basic Functions
-
+##### Chapter 3
+Resizing and Cropping
 #
 You may can grab some [Free Stock Videos](https://www.pexels.com/videos/) for your projects. 
