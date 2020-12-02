@@ -42,9 +42,24 @@ def getContour(img):
         print(area)
 
         if area > 500:
-            cv2.drawContours(imgContour, contour, -1, (57, 255, 20), 2)
             perimeter = cv2.arcLength(contour, True)
             print(perimeter)
+            approx = cv2.approxPolyDP(contour, 0.02 * perimeter, True)
+            # Corner points of the contour  figures
+            print(len(approx))
+            object_corner = len(approx)
+            x, y, w, h = cv2. boundingRect(approx)
+
+            object_type = "???"
+            if object_corner == 3:
+                object_type = "Tri"
+
+            cv2.drawContours(imgContour, contour, -1, (57, 255, 20), 3)
+            cv2.rectangle(imgContour, (x, y), (x + w, y + h), (238, 200, 41), 3)
+            cv2.putText(imgContour, object_type,
+                        (x + (w // 2) - 10, y + (h // 2) - 10),
+                        cv2.FONT_HERSHEY_PLAIN, 1.5, (0, 0, 0), 2)
+
 
 path = "../shapes.png"
 img = cv2.imread(path)
