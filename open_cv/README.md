@@ -37,6 +37,6 @@ All credit goes to an amazing [Murtaza's Worshop](https://www.instagram.com/murt
 
 > ##### Chapter 9
 >
-> -Face detection. You can get *Haar Cascades* for **OpenCV** [here](https://github.com/opencv/opencv/tree/master/data/haarcascades)
+> - Face detection. You can get *Haar Cascades* for **OpenCV** [here](https://github.com/opencv/opencv/tree/master/data/haarcascades)
 #
 You may grab some [Free Stock Videos](https://www.pexels.com/videos/) for your projects. 
