@@ -16,5 +16,7 @@ Warp Perspective
 Joining images
 ##### Chapter 7
 Color detection
+##### Chapter 8
+Contours and shape detection
 #
 You may can grab some [Free Stock Videos](https://www.pexels.com/videos/) for your projects. 
