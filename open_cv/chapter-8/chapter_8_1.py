@@ -50,15 +50,24 @@ def getContour(img):
             object_corner = len(approx)
             x, y, w, h = cv2. boundingRect(approx)
 
-            object_type = "???"
+            # Logic
+            object_type = "Unknown"
             if object_corner == 3:
-                object_type = "Tri"
+                object_type = "Tria"
+            elif object_corner == 4:
+                aspect_ratio = w / float(h)
+                if 0.98 < aspect_ratio < 1.03:
+                    object_type = "Square"
+                else:
+                    object_type = "Rect"
+            elif object_corner > 4:
+                object_type = "Circle"
 
             cv2.drawContours(imgContour, contour, -1, (57, 255, 20), 3)
             cv2.rectangle(imgContour, (x, y), (x + w, y + h), (238, 200, 41), 3)
             cv2.putText(imgContour, object_type,
                         (x + (w // 2) - 10, y + (h // 2) - 10),
-                        cv2.FONT_HERSHEY_PLAIN, 1.5, (0, 0, 0), 2)
+                        cv2.FONT_HERSHEY_PLAIN, 1.3, (0, 0, 0), 2)
 
 
 path = "../shapes.png"
