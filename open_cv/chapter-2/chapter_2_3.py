@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3.7
 import cv2
 
-img = cv2.imread("test_pic.jpg")
+img = cv2.imread("../test_pic.jpg")
 
 imgCanny = cv2.Canny(img, 150, 200)
 

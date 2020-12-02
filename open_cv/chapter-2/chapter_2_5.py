@@ -2,7 +2,7 @@
 import cv2
 import numpy as np
 
-img = cv2.imread("test_pic.jpg")
+img = cv2.imread("../test_pic.jpg")
 kernel = np.ones((2, 2), np.uint8)
 
 imgCanny = cv2.Canny(img, 100, 200)

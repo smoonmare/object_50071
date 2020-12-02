@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3.7
 import cv2
 
-img = cv2.imread("test_pic.jpg")
+img = cv2.imread("../test_pic.jpg")
 
 imgBlur = cv2.GaussianBlur(img, (7, 7), 0)
 

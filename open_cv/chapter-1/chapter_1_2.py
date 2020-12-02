@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3.7
 import cv2
 
-cap = cv2.VideoCapture("test_video.mp4")
+cap = cv2.VideoCapture("../test_video.mp4")
 
 while True:
     success, img = cap.read()

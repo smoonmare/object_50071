@@ -1,6 +1,6 @@
 import cv2
 
-img = cv2.imread("test_pic.jpg")
+img = cv2.imread("../test_pic.jpg")
 print(img.shape)
 # image with (y, x)
 
