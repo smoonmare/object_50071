@@ -12,5 +12,6 @@ Resizing and Cropping
 Shapes and text
 ##### Chapter 5
 Warp Perspective
+##### Joining images
 #
 You may can grab some [Free Stock Videos](https://www.pexels.com/videos/) for your projects. 
