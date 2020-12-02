@@ -1,5 +1,4 @@
 #!/usr/local/bin/python3.7
-
 import cv2
 
 cap = cv2.VideoCapture(0)
