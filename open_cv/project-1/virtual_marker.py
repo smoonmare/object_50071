@@ -6,14 +6,21 @@ frame_width = 640
 frame_height = 480
 # colors red, green, blue, yellow found with color_picker.py
 # color = [hue_min, sat_min, val_min, hue_max, sat_max, val_max]
-colors = [[148, 195, 60, 179, 255, 255],
+colors_hsv = [[148, 195, 60, 179, 255, 255],
           [31, 71, 0, 76, 255, 255],
           [89, 138, 51, 102, 255, 255],
           [17, 60, 39, 26, 255, 255]]
+colors_bgr = [[0, 0, 128],
+              [0, 128, 0],
+              [128, 0, 0],
+              [0, 128, 128]]
+points = []
+# [x, y, color_id]
 
 
 def getContour(img):
     contours, hierarchy = cv2.findContours(img, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+    x, y, w, h = 0, 0, 0, 0
 
     for contour in contours:
         area = cv2.contourArea(contour)
@@ -22,18 +29,31 @@ def getContour(img):
             perimeter = cv2.arcLength(contour, True)
             approx = cv2.approxPolyDP(contour, 0.02 * perimeter, True)
             x, y, w, h = cv2.boundingRect(approx)
-            cv2.drawContours(imgResult, contour, -1, (255, 0, 0), 2)
+            # cv2.drawContours(imgResult, contour, -1, (255, 0, 0), 2)
+    return x + w // 2, y
 
 
 def findColor(img, *args):
     imgHSV = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+    color_number = 0
+    new_points = []
 
-    for color in colors:
-        lower_hsv = np.array(color[0:3])
-        upper_hsv = np.array(color[3:6])
+    for color_hsv in colors_hsv:
+        lower_hsv = np.array(color_hsv[0:3])
+        upper_hsv = np.array(color_hsv[3:6])
         mask = cv2.inRange(imgHSV, lower_hsv, upper_hsv)
-        getContour(mask)
+        x, y = getContour(mask)
+        cv2.circle(imgResult, (x, y), 20, colors_bgr[color_number], cv2.FILLED)
+        if x != 0 and y != 0:
+            points.append([x, y, color_number])
+        color_number += 1
         # cv2.imshow(str(color[0]), mask)
+    return new_points
+
+
+def drawOnCanvas(points, color_brg):
+    for point in points:
+        cv2.circle(imgResult, (point[0], point[1]), 20, colors_bgr[point[2]], cv2.FILLED)
 
 
 capture = cv2.VideoCapture(0)
@@ -67,7 +87,13 @@ while True:
     success, img = capture.read()
     imgResult = img.copy()
 
-    findColor(img, colors)
+    new_points = findColor(img, colors_hsv, colors_bgr)
+    if len(new_points) != 0:
+        for new_point in new_points:
+            points.append(new_point)
+    if len(points) != 0:
+        drawOnCanvas(points, colors_bgr)
+
     cv2.imshow("Live Feed Output", img)
     cv2.imshow("Contour Box", imgResult)
     if cv2.waitKey(1) & 0xFF == ord("q"):
