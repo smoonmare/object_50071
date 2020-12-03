@@ -2,9 +2,16 @@
 Introduction to **Computer Vision**.
 All credit goes to an amazing [Murtaza's Worshop](https://www.instagram.com/murtazasworkshop/). He's the man behind the lessons. 
 #
- - #### Project 1
-    - **Virtual Paint**
- #
+ - ### Project 1
+    - ##### Paint
+   #
+ - ### Project 2
+    - ##### Document Scanner
+   #
+ - ### Project 3
+    - ##### Plate Number Detector 
+    *Russia only*
+   #
  #### OpenCV Intro
    - ##### Chapter 1
            Read images, video and webcam feed.
